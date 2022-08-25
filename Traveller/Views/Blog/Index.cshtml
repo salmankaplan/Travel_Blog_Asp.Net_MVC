@@ -1,0 +1,103 @@
+﻿@using Traveller.BlogModel;
+@model TravelModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container archive-content">
+    <div class="row">
+        <div class="right-sidebar col-md-8">
+            <div class="row">
+
+
+                @foreach (var item in Model.Place)
+                {
+                    <div class="mb-post-wrap simple ">
+                        <div class="col-md-12 col-sm-12">
+                            <article id="post-100" class="mb-post-outer post-100 post type-post status-publish format-standard has-post-thumbnail hentry category-destination tag-travel">
+                                <!-- Post Media -->
+                                <div class="featured-area media-small">
+                                    <figure class="mb-post-media">
+                                        <a href="/Blog/detail/@item.Id" class="post-thumbnail" title="The Ultimate Girls Packing List for Africa Jungle"><img width="1000" height="615" src="~/Content/images/@item.Image" class="attachment-destination_post_thumb size-destination_post_thumb wp-post-image" alt="" loading="lazy" /></a>
+                                    </figure>
+                                </div>
+
+                                <!-- End of post Media -->
+                                <div class="entry-post">
+                                    <!-- Entry post details -->
+                                    <div class="mb-post">
+
+
+                                        <!-- Entry-header -->
+                                        <header class="entry-header">
+                                            <!-- Posts entry meta -->
+                                            <!-- End of posts entry meta -->
+                                            <!-- Title of posts -->
+                                            <h2 class="mb-post-title"><a href="/Blog/detail/@item.Id" rel="bookmark">@item.Title</a></h2>      <!--End of Title of posts  -->
+                                            <div class="md-post-meta">
+                                                <span class="time">@item.Date.ToString("dd/MM/yyyy")</span>
+                                                <span class="author-name">seka </span>
+                                                <span>
+                                                    @for (int i = 0; i < item.AvRate; i++)
+                                                    {
+
+                                                        <i class="fa  fa-star text-danger"></i>
+                                                    }
+                                                    @for (int i = 0; i < 5 - Convert.ToInt32(item.AvRate); i++)
+                                                    {
+                                                        <i class="fa fa-star text-light"></i>
+                                                    }
+                                                </span>
+                                            </div>
+
+                                        </header><!-- .entry-header -->
+
+                                        <div class="mb-post-container">
+                                            <div class="mb-post-content">
+                                                <!-- Post excerpt -->
+
+                                                <div class="mb-blog-post-text">
+
+                                                    <p>
+                                                        @if (item.Description.Length > 198)
+                                                        {
+                                                            @item.Description.Substring(0, 198)
+                                                        }
+                                                        else
+                                                        {
+                                                            @item.Description
+                                                        }
+
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End of entry post details -->
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                }
+                <!-- All Blog posts -->
+
+
+
+
+                <div id="pagination" class="pagination clear-fix">
+                </div>
+            </div>
+        </div>
+
+
+
+
+        @Html.Partial("~/Views/Shared/_about.cshtml")
+    </div>
+    <!--End of row-->
+
+</div>
+
+

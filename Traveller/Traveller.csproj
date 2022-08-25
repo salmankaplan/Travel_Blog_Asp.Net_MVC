@@ -1,0 +1,750 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{18C6693D-1B6B-4C9C-ABE1-3EB6AFDEE258}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Traveller</RootNamespace>
+    <AssemblyName>Traveller</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44325</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BlogModel\TravelModel.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206010810241_nasa.cs" />
+    <Compile Include="Migrations\202206010810241_nasa.designer.cs">
+      <DependentUpon>202206010810241_nasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206010812466_nasa1.cs" />
+    <Compile Include="Migrations\202206010812466_nasa1.designer.cs">
+      <DependentUpon>202206010812466_nasa1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206011351437_nasa3.cs" />
+    <Compile Include="Migrations\202206011351437_nasa3.designer.cs">
+      <DependentUpon>202206011351437_nasa3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\DataContext.cs" />
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\Place.cs" />
+    <Compile Include="Models\Slider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\164\feed\index.html" />
+    <Content Include="Content\164\index.html" />
+    <Content Include="Content\164\insatagram.html" />
+    <Content Include="Content\164\pintrest.html" />
+    <Content Include="Content\164\twitter.html" />
+    <Content Include="Content\a-week-on-lake-time-a-travel-guide-to-lake-huawai\feed\index.html" />
+    <Content Include="Content\a-week-on-lake-time-a-travel-guide-to-lake-huawai\index.html" />
+    <Content Include="Content\a-week-on-lake-time-a-travel-guide-to-lake-huawai\insatagram.html" />
+    <Content Include="Content\a-week-on-lake-time-a-travel-guide-to-lake-huawai\pintrest.html" />
+    <Content Include="Content\a-week-on-lake-time-a-travel-guide-to-lake-huawai\twitter.html" />
+    <Content Include="Content\about-me\index.html" />
+    <Content Include="Content\about-me\insatagram.html" />
+    <Content Include="Content\about-me\pintrest.html" />
+    <Content Include="Content\about-me\twitter.html" />
+    <Content Include="Content\audio-post\feed\index.html" />
+    <Content Include="Content\audio-post\index.html" />
+    <Content Include="Content\audio-post\insatagram.html" />
+    <Content Include="Content\audio-post\pintrest.html" />
+    <Content Include="Content\audio-post\twitter.html" />
+    <Content Include="Content\author\madeline_user\feed\index.html" />
+    <Content Include="Content\author\madeline_user\index.html" />
+    <Content Include="Content\author\madeline_user\insatagram.html" />
+    <Content Include="Content\author\madeline_user\page\1\index.html" />
+    <Content Include="Content\author\madeline_user\page\2\index.html" />
+    <Content Include="Content\author\madeline_user\page\2\insatagram.html" />
+    <Content Include="Content\author\madeline_user\page\2\pintrest.html" />
+    <Content Include="Content\author\madeline_user\page\2\twitter.html" />
+    <Content Include="Content\author\madeline_user\pintrest.html" />
+    <Content Include="Content\author\madeline_user\twitter.html" />
+    <Content Include="Content\best-trip-of-my-life\feed\index.html" />
+    <Content Include="Content\best-trip-of-my-life\index.html" />
+    <Content Include="Content\best-trip-of-my-life\insatagram.html" />
+    <Content Include="Content\best-trip-of-my-life\pintrest.html" />
+    <Content Include="Content\best-trip-of-my-life\twitter.html" />
+    <Content Include="Content\category\adventure\feed\index.html" />
+    <Content Include="Content\category\adventure\index.html" />
+    <Content Include="Content\category\adventure\insatagram.html" />
+    <Content Include="Content\category\adventure\pintrest.html" />
+    <Content Include="Content\category\adventure\twitter.html" />
+    <Content Include="Content\category\city\feed\index.html" />
+    <Content Include="Content\category\city\index.html" />
+    <Content Include="Content\category\city\insatagram.html" />
+    <Content Include="Content\category\city\pintrest.html" />
+    <Content Include="Content\category\city\twitter.html" />
+    <Content Include="Content\category\destination\feed\index.html" />
+    <Content Include="Content\category\destination\index.html" />
+    <Content Include="Content\category\destination\insatagram.html" />
+    <Content Include="Content\category\destination\pintrest.html" />
+    <Content Include="Content\category\destination\twitter.html" />
+    <Content Include="Content\category\france\feed\index.html" />
+    <Content Include="Content\category\france\index.html" />
+    <Content Include="Content\category\france\insatagram.html" />
+    <Content Include="Content\category\france\pintrest.html" />
+    <Content Include="Content\category\france\twitter.html" />
+    <Content Include="Content\category\mountain\feed\index.html" />
+    <Content Include="Content\category\mountain\index.html" />
+    <Content Include="Content\category\mountain\insatagram.html" />
+    <Content Include="Content\category\mountain\pintrest.html" />
+    <Content Include="Content\category\mountain\twitter.html" />
+    <Content Include="Content\category\new-york\feed\index.html" />
+    <Content Include="Content\category\new-york\index.html" />
+    <Content Include="Content\category\new-york\insatagram.html" />
+    <Content Include="Content\category\new-york\pintrest.html" />
+    <Content Include="Content\category\new-york\twitter.html" />
+    <Content Include="Content\comments\feed\index.html" />
+    <Content Include="Content\contact\index.html" />
+    <Content Include="Content\contact\insatagram.html" />
+    <Content Include="Content\contact\pintrest.html" />
+    <Content Include="Content\contact\twitter.html" />
+    <Content Include="Content\dramatically-redefine-market-positioning-testing-procedures-for-end-initiatives\feed\index.html" />
+    <Content Include="Content\dramatically-redefine-market-positioning-testing-procedures-for-end-initiatives\index.html" />
+    <Content Include="Content\dramatically-redefine-market-positioning-testing-procedures-for-end-initiatives\insatagram.html" />
+    <Content Include="Content\dramatically-redefine-market-positioning-testing-procedures-for-end-initiatives\pintrest.html" />
+    <Content Include="Content\dramatically-redefine-market-positioning-testing-procedures-for-end-initiatives\twitter.html" />
+    <Content Include="Content\eiffel-tower\feed\index.html" />
+    <Content Include="Content\eiffel-tower\index.html" />
+    <Content Include="Content\eiffel-tower\insatagram.html" />
+    <Content Include="Content\eiffel-tower\pintrest.html" />
+    <Content Include="Content\eiffel-tower\twitter.html" />
+    <Content Include="Content\feed\index.html" />
+    <Content Include="Content\gallery-post\feed\index.html" />
+    <Content Include="Content\gallery-post\index.html" />
+    <Content Include="Content\gallery-post\insatagram.html" />
+    <Content Include="Content\gallery-post\pintrest.html" />
+    <Content Include="Content\gallery-post\twitter.html" />
+    <Content Include="Content\go-explore-its-big-world-out-there\feed\index.html" />
+    <Content Include="Content\go-explore-its-big-world-out-there\index.html" />
+    <Content Include="Content\go-explore-its-big-world-out-there\insatagram.html" />
+    <Content Include="Content\go-explore-its-big-world-out-there\pintrest.html" />
+    <Content Include="Content\go-explore-its-big-world-out-there\twitter.html" />
+    <Content Include="Content\home\1-column-sidebar\index.html" />
+    <Content Include="Content\home\1-column-sidebar\insatagram.html" />
+    <Content Include="Content\home\1-column-sidebar\page\1\index.html" />
+    <Content Include="Content\home\1-column-sidebar\page\2\index.html" />
+    <Content Include="Content\home\1-column-sidebar\page\2\insatagram.html" />
+    <Content Include="Content\home\1-column-sidebar\page\2\pintrest.html" />
+    <Content Include="Content\home\1-column-sidebar\page\2\twitter.html" />
+    <Content Include="Content\home\1-column-sidebar\pintrest.html" />
+    <Content Include="Content\home\1-column-sidebar\twitter.html" />
+    <Content Include="Content\home\2-column-with-sidebar\index.html" />
+    <Content Include="Content\home\2-column-with-sidebar\insatagram.html" />
+    <Content Include="Content\home\2-column-with-sidebar\page\1\index.html" />
+    <Content Include="Content\home\2-column-with-sidebar\page\2\index.html" />
+    <Content Include="Content\home\2-column-with-sidebar\page\2\insatagram.html" />
+    <Content Include="Content\home\2-column-with-sidebar\page\2\pintrest.html" />
+    <Content Include="Content\home\2-column-with-sidebar\page\2\twitter.html" />
+    <Content Include="Content\home\2-column-with-sidebar\pintrest.html" />
+    <Content Include="Content\home\2-column-with-sidebar\twitter.html" />
+    <Content Include="Content\home\3-column-masonry\index.html" />
+    <Content Include="Content\home\3-column-masonry\insatagram.html" />
+    <Content Include="Content\home\3-column-masonry\page\1\index.html" />
+    <Content Include="Content\home\3-column-masonry\page\2\index.html" />
+    <Content Include="Content\home\3-column-masonry\page\2\insatagram.html" />
+    <Content Include="Content\home\3-column-masonry\page\2\pintrest.html" />
+    <Content Include="Content\home\3-column-masonry\page\2\twitter.html" />
+    <Content Include="Content\home\3-column-masonry\pintrest.html" />
+    <Content Include="Content\home\3-column-masonry\twitter.html" />
+    <Content Include="Content\home\full-width-post-layout\index.html" />
+    <Content Include="Content\home\full-width-post-layout\insatagram.html" />
+    <Content Include="Content\home\full-width-post-layout\page\1\index.html" />
+    <Content Include="Content\home\full-width-post-layout\page\2\index.html" />
+    <Content Include="Content\home\full-width-post-layout\page\2\insatagram.html" />
+    <Content Include="Content\home\full-width-post-layout\page\2\pintrest.html" />
+    <Content Include="Content\home\full-width-post-layout\page\2\twitter.html" />
+    <Content Include="Content\home\full-width-post-layout\pintrest.html" />
+    <Content Include="Content\home\full-width-post-layout\twitter.html" />
+    <Content Include="Content\home\index.html" />
+    <Content Include="Content\home\insatagram.html" />
+    <Content Include="Content\home\pintrest.html" />
+    <Content Include="Content\home\twitter.html" />
+    <Content Include="Content\images\Cunda-gezi.jpg" />
+    <Content Include="Content\images\cunda-sokak.jpg" />
+    <Content Include="Content\images\cunda.jpg" />
+    <Content Include="Content\images\cundaa.jpg" />
+    <Content Include="Content\images\cundaada.jpg" />
+    <Content Include="Content\images\default-place.jpg" />
+    <Content Include="Content\images\nemrut-2.jpg" />
+    <Content Include="Content\images\nemrut-dagi.jpg" />
+    <Content Include="Content\images\nemrut.jpg" />
+    <Content Include="Content\images\nemrutdag.jpg" />
+    <Content Include="Content\images\nemrutdagi.jpg" />
+    <Content Include="Content\images\nemrutunkizi.jpg" />
+    <Content Include="Content\images\Pamukkale-Travertenleri.jpg" />
+    <Content Include="Content\images\pamukkale.jpg" />
+    <Content Include="Content\images\profil1.jpg" />
+    <Content Include="Content\images\safraboluev.jpg" />
+    <Content Include="Content\images\safranbolu-foto.jpg" />
+    <Content Include="Content\images\safranbolu.jpg" />
+    <Content Include="Content\images\safranbolusokak.jpg" />
+    <Content Include="Content\images\side.jpg" />
+    <Content Include="Content\images\sidekent.png" />
+    <Content Include="Content\images\user-avatar.png" />
+    <Content Include="Content\index.html" />
+    <Content Include="Content\index0345.html" />
+    <Content Include="Content\index0735.html" />
+    <Content Include="Content\index0b69.html" />
+    <Content Include="Content\index0e62.html" />
+    <Content Include="Content\index2df4.html" />
+    <Content Include="Content\index341b.html" />
+    <Content Include="Content\index3f5a.html" />
+    <Content Include="Content\index4579.html" />
+    <Content Include="Content\index5c36.html" />
+    <Content Include="Content\index5c7e.html" />
+    <Content Include="Content\index7760.html" />
+    <Content Include="Content\index7896.html" />
+    <Content Include="Content\index8054.html" />
+    <Content Include="Content\index86fa.html" />
+    <Content Include="Content\index88b9.html" />
+    <Content Include="Content\index94b0.html" />
+    <Content Include="Content\index9c2b.html" />
+    <Content Include="Content\indexada0.html" />
+    <Content Include="Content\indexb190.html" />
+    <Content Include="Content\indexc885.html" />
+    <Content Include="Content\indexe9b4.html" />
+    <Content Include="Content\insatagram.html" />
+    <Content Include="Content\la-plage-casadelmar\feed\index.html" />
+    <Content Include="Content\la-plage-casadelmar\index.html" />
+    <Content Include="Content\la-plage-casadelmar\insatagram.html" />
+    <Content Include="Content\la-plage-casadelmar\pintrest.html" />
+    <Content Include="Content\la-plage-casadelmar\twitter.html" />
+    <Content Include="Content\mont-saint-michel\feed\index.html" />
+    <Content Include="Content\mont-saint-michel\index.html" />
+    <Content Include="Content\mont-saint-michel\insatagram.html" />
+    <Content Include="Content\mont-saint-michel\pintrest.html" />
+    <Content Include="Content\mont-saint-michel\twitter.html" />
+    <Content Include="Content\page\1\index.html" />
+    <Content Include="Content\page\2\index.html" />
+    <Content Include="Content\page\2\insatagram.html" />
+    <Content Include="Content\page\2\pintrest.html" />
+    <Content Include="Content\page\2\twitter.html" />
+    <Content Include="Content\pintrest.html" />
+    <Content Include="Content\seamlessly-create-robust-paradigms-whereas-covalent\feed\index.html" />
+    <Content Include="Content\seamlessly-create-robust-paradigms-whereas-covalent\index.html" />
+    <Content Include="Content\seamlessly-create-robust-paradigms-whereas-covalent\insatagram.html" />
+    <Content Include="Content\seamlessly-create-robust-paradigms-whereas-covalent\pintrest.html" />
+    <Content Include="Content\seamlessly-create-robust-paradigms-whereas-covalent\twitter.html" />
+    <Content Include="Content\ski-tour\feed\index.html" />
+    <Content Include="Content\ski-tour\index.html" />
+    <Content Include="Content\ski-tour\insatagram.html" />
+    <Content Include="Content\ski-tour\pintrest.html" />
+    <Content Include="Content\ski-tour\twitter.html" />
+    <Content Include="Content\star\jquery.min.js" />
+    <Content Include="Content\star\jquery.rateyo.min.css" />
+    <Content Include="Content\star\jquery.rateyo.min.js" />
+    <Content Include="Content\tag\city\feed\index.html" />
+    <Content Include="Content\tag\city\index.html" />
+    <Content Include="Content\tag\city\insatagram.html" />
+    <Content Include="Content\tag\city\pintrest.html" />
+    <Content Include="Content\tag\city\twitter.html" />
+    <Content Include="Content\tag\destination\feed\index.html" />
+    <Content Include="Content\tag\destination\index.html" />
+    <Content Include="Content\tag\destination\insatagram.html" />
+    <Content Include="Content\tag\destination\pintrest.html" />
+    <Content Include="Content\tag\destination\twitter.html" />
+    <Content Include="Content\tag\france\feed\index.html" />
+    <Content Include="Content\tag\france\index.html" />
+    <Content Include="Content\tag\france\insatagram.html" />
+    <Content Include="Content\tag\france\pintrest.html" />
+    <Content Include="Content\tag\france\twitter.html" />
+    <Content Include="Content\tag\new-york\feed\index.html" />
+    <Content Include="Content\tag\new-york\index.html" />
+    <Content Include="Content\tag\new-york\insatagram.html" />
+    <Content Include="Content\tag\new-york\pintrest.html" />
+    <Content Include="Content\tag\new-york\twitter.html" />
+    <Content Include="Content\tag\tour\feed\index.html" />
+    <Content Include="Content\tag\tour\index.html" />
+    <Content Include="Content\tag\tour\insatagram.html" />
+    <Content Include="Content\tag\tour\pintrest.html" />
+    <Content Include="Content\tag\tour\twitter.html" />
+    <Content Include="Content\tag\travel\feed\index.html" />
+    <Content Include="Content\tag\travel\index.html" />
+    <Content Include="Content\tag\travel\insatagram.html" />
+    <Content Include="Content\tag\travel\pintrest.html" />
+    <Content Include="Content\tag\travel\twitter.html" />
+    <Content Include="Content\the-city-has-music-for-those-who-listen\feed\index.html" />
+    <Content Include="Content\the-city-has-music-for-those-who-listen\index.html" />
+    <Content Include="Content\the-city-has-music-for-those-who-listen\index267f.html" />
+    <Content Include="Content\the-city-has-music-for-those-who-listen\insatagram.html" />
+    <Content Include="Content\the-city-has-music-for-those-who-listen\pintrest.html" />
+    <Content Include="Content\the-city-has-music-for-those-who-listen\twitter.html" />
+    <Content Include="Content\twitter.html" />
+    <Content Include="Content\video-post\feed\index.html" />
+    <Content Include="Content\video-post\index.html" />
+    <Content Include="Content\video-post\insatagram.html" />
+    <Content Include="Content\video-post\pintrest.html" />
+    <Content Include="Content\video-post\twitter.html" />
+    <Content Include="Content\wp-admin\admin-ajax.html" />
+    <Content Include="Content\wp-content\plugins\contact-form-7\includes\css\styles7e15.css" />
+    <Content Include="Content\wp-content\plugins\contact-form-7\includes\js\index7e15.js" />
+    <Content Include="Content\wp-content\plugins\instagram-feed\css\sb-instagram-2-2.min2f91.css" />
+    <Content Include="Content\wp-content\plugins\instagram-feed\img\gsarma.png" />
+    <Content Include="Content\wp-content\plugins\instagram-feed\img\placeholder.png" />
+    <Content Include="Content\wp-content\plugins\instagram-feed\img\small-logo.png" />
+    <Content Include="Content\wp-content\plugins\instagram-feed\js\sb-instagram-2-2.min2f91.js" />
+    <Content Include="Content\wp-content\themes\destination\css\AjaxLoader.html" />
+    <Content Include="Content\wp-content\themes\destination\css\bootstrap.min.css" />
+    <Content Include="Content\wp-content\themes\destination\css\font-awesome.min.css" />
+    <Content Include="Content\wp-content\themes\destination\css\grabbing.html" />
+    <Content Include="Content\wp-content\themes\destination\css\images\bx_loader.html" />
+    <Content Include="Content\wp-content\themes\destination\css\images\controls.html" />
+    <Content Include="Content\wp-content\themes\destination\css\jquery.bxslider69c8.css" />
+    <Content Include="Content\wp-content\themes\destination\css\jquery.bxslider6dcf.css" />
+    <Content Include="Content\wp-content\themes\destination\css\jquery.bxslider7404.css" />
+    <Content Include="Content\wp-content\themes\destination\css\owl.carousel69c8.css" />
+    <Content Include="Content\wp-content\themes\destination\css\owl.carousel6dcf.css" />
+    <Content Include="Content\wp-content\themes\destination\css\owl.carousel7404.css" />
+    <Content Include="Content\wp-content\themes\destination\css\owl.theme69c8.css" />
+    <Content Include="Content\wp-content\themes\destination\css\owl.theme6dcf.css" />
+    <Content Include="Content\wp-content\themes\destination\css\owl.theme7404.css" />
+    <Content Include="Content\wp-content\themes\destination\css\responsive69c8.css" />
+    <Content Include="Content\wp-content\themes\destination\css\responsive6dcf.css" />
+    <Content Include="Content\wp-content\themes\destination\css\responsive7404.css" />
+    <Content Include="Content\wp-content\themes\destination\dist\assets\js\bundle68b3.js" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-brands-400.svg" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-regular-400.svg" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-solid-900.svg" />
+    <Content Include="Content\wp-content\themes\destination\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\wp-content\themes\destination\images\footer-logo.png" />
+    <Content Include="Content\wp-content\themes\destination\js\bootstrap.min69c8.js" />
+    <Content Include="Content\wp-content\themes\destination\js\bootstrap.min6dcf.js" />
+    <Content Include="Content\wp-content\themes\destination\js\bootstrap.min7404.js" />
+    <Content Include="Content\wp-content\themes\destination\js\custom69c8.js" />
+    <Content Include="Content\wp-content\themes\destination\js\custom6dcf.js" />
+    <Content Include="Content\wp-content\themes\destination\js\custom7404.js" />
+    <Content Include="Content\wp-content\themes\destination\js\jquery.bxslider.min69c8.js" />
+    <Content Include="Content\wp-content\themes\destination\js\jquery.bxslider.min6dcf.js" />
+    <Content Include="Content\wp-content\themes\destination\js\jquery.bxslider.min7404.js" />
+    <Content Include="Content\wp-content\themes\destination\js\jquery.sidr.min69c8.js" />
+    <Content Include="Content\wp-content\themes\destination\js\jquery.sidr.min6dcf.js" />
+    <Content Include="Content\wp-content\themes\destination\js\jquery.sidr.min7404.js" />
+    <Content Include="Content\wp-content\themes\destination\js\owl.carousel.min69c8.js" />
+    <Content Include="Content\wp-content\themes\destination\js\owl.carousel.min6dcf.js" />
+    <Content Include="Content\wp-content\themes\destination\js\owl.carousel.min77e6.js" />
+    <Content Include="Content\wp-content\themes\destination\js\plugins69c8.js" />
+    <Content Include="Content\wp-content\themes\destination\js\plugins6dcf.js" />
+    <Content Include="Content\wp-content\themes\destination\js\plugins7404.js" />
+    <Content Include="Content\wp-content\themes\destination\owl.video.play.html" />
+    <Content Include="Content\wp-content\themes\destination\style.css" />
+    <Content Include="Content\wp-content\uploads\2017\06\adventure-1850912_1920-1000x615.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\adventure-1850912_1920-400x250.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\adventure-1850912_1920.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\aerial-view-of-green-trees-beside-body-of-water-4006534-1000x615.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\aerial-view-of-green-trees-beside-body-of-water-4006534-150x100.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\aerial-view-of-green-trees-beside-body-of-water-4006534-400x250.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\aerial-view-of-green-trees-beside-body-of-water-4006534-scaled.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\aerial-view-of-people-on-beach-4253835-2-1000x615.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\aerial-view-of-people-on-beach-4253835-2-400x250.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\aerial-view-of-people-on-beach-4253835-2-scaled.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\beach-young-girl-woman-woman-beach.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\brown-on-seashore-near-mountain-1007657-1000x615.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\brown-on-seashore-near-mountain-1007657-1024x681.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\brown-on-seashore-near-mountain-1007657-400x250.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\brown-on-seashore-near-mountain-1007657-scaled.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\crop-relaxing-woman-on-ocean-shore-3760261-1000x615.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\crop-relaxing-woman-on-ocean-shore-3760261-400x250.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\island-300x200.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\island-520x320.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\island.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\man-in-blue-shirt-carrying-woman-in-white-dress-2549082-2-1000x615.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\man-in-blue-shirt-carrying-woman-in-white-dress-2549082-2-1024x684.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\man-in-blue-shirt-carrying-woman-in-white-dress-2549082-2-400x250.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\man-in-blue-shirt-carrying-woman-in-white-dress-2549082-2.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\mountains-1828596_960_720-300x181.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\mountains-1828596_960_720-520x320.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\mountains-1828596_960_720.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\newyork-300x200.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\newyork-520x320.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\newyork.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\photo-of-man-taking-photo-of-woman-standing-on-shore-2674144-1000x615.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\photo-of-man-taking-photo-of-woman-standing-on-shore-2674144-150x100.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\photo-of-man-taking-photo-of-woman-standing-on-shore-2674144-400x250.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\photo-of-man-taking-photo-of-woman-standing-on-shore-2674144-scaled.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\woman-2896389_1920-1000x615.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\06\woman-2896389_1920-400x250.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\bunch-of-camels-in-desert-dune-1000x615.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\bunch-of-camels-in-desert-dune-150x100.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\bunch-of-camels-in-desert-dune-400x250.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\bunch-of-camels-in-desert-dune.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\photo-of-woman-sitting-on-stone-next-to-body-of-water-2101774-1024x632.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\santorini-greece-3264723-1000x615.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\santorini-greece-3264723-150x100.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\santorini-greece-3264723-400x250.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\santorini-greece-3264723-scaled.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\woman-in-black-and-brown-bikini-sitting-on-brown-wooden-dock-3822113-1000x615.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\woman-in-black-and-brown-bikini-sitting-on-brown-wooden-dock-3822113-1024x683.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\woman-in-black-and-brown-bikini-sitting-on-brown-wooden-dock-3822113-150x100.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\woman-in-black-and-brown-bikini-sitting-on-brown-wooden-dock-3822113-400x250.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\07\woman-in-black-and-brown-bikini-sitting-on-brown-wooden-dock-3822113-scaled.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\08\Layer-7631-1024x683.jpg" />
+    <Content Include="Content\wp-content\uploads\2017\08\Layer-7631.jpg" />
+    <Content Include="Content\wp-content\uploads\2020\09\logo.png" />
+    <Content Include="Content\wp-content\uploads\2021\02\cropped-favicon-180x180.png" />
+    <Content Include="Content\wp-content\uploads\2021\02\cropped-favicon-192x192.png" />
+    <Content Include="Content\wp-content\uploads\2021\02\cropped-favicon-32x32.png" />
+    <Content Include="Content\wp-content\uploads\2022\03\about-image.jpg" />
+    <Content Include="Content\wp-content\uploads\2022\03\Jainne-Doe.png" />
+    <Content Include="Content\wp-includes\css\dist\block-library\style.min69c8.css" />
+    <Content Include="Content\wp-includes\css\dist\block-library\style.min6dcf.css" />
+    <Content Include="Content\wp-includes\css\dist\block-library\style.min7404.css" />
+    <Content Include="Content\wp-includes\js\comment-reply.min69c8.js" />
+    <Content Include="Content\wp-includes\js\comment-reply.min6dcf.js" />
+    <Content Include="Content\wp-includes\js\comment-reply.min7404.js" />
+    <Content Include="Content\wp-includes\js\dist\vendor\regenerator-runtime.min3937.js" />
+    <Content Include="Content\wp-includes\js\dist\vendor\regenerator-runtime.minb36a.js" />
+    <Content Include="Content\wp-includes\js\dist\vendor\wp-polyfill.min2c7c.js" />
+    <Content Include="Content\wp-includes\js\imagesloaded.mineda1.js" />
+    <Content Include="Content\wp-includes\js\jquery\jquery-migrate.mind617.js" />
+    <Content Include="Content\wp-includes\js\jquery\jquery.masonry.minef70.js" />
+    <Content Include="Content\wp-includes\js\jquery\jquery.minaf6c.js" />
+    <Content Include="Content\wp-includes\js\masonry.min3a05.js" />
+    <Content Include="Content\wp-includes\js\wp-embed.min69c8.js" />
+    <Content Include="Content\wp-includes\wlwmanifest.xml" />
+    <Content Include="Content\wp-json\index.html" />
+    <Content Include="Content\xmlrpc0db0.php" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\.vs\destination_wp\v17\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\.vs\destination_wp\config\applicationhost.config" />
+    <Content Include="Content\.vs\slnx.sqlite" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXd0oJC8MLnrtbVK.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXh0oJC8MLnrtQ.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXV0oJC8MLnrtbVK.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXx0oJC8MLnrtbVK.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXZ0oJC8MLnrtbVK.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXd0oJC8MLnrtbVK.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXh0oJC8MLnrtQ.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXV0oJC8MLnrtbVK.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXx0oJC8MLnrtbVK.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXZ0oJC8MLnrtbVK.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw0aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw2aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw3aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw5aXx-p7K4GLs.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw9aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw0aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw2aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXx-p7K4GLs.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw9aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw0aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw2aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw3aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw5aXx-p7K4GLs.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw9aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w0aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w2aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w3aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w5aXx-p7K4GLs.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w9aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w0aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w2aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w3aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w5aXx-p7K4GLs.woff" />
+    <Content Include="Content\wp-content\fonts\montserrat\JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w9aXx-p7K4GLvztg.woff" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-brands-400.eot" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-brands-400.ttf" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-brands-400.woff" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-brands-400.woff2" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-brands-400d41d.eot" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-regular-400.eot" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-regular-400.ttf" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-regular-400.woff" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-regular-400.woff2" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-regular-400d41d.eot" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-solid-900.eot" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-solid-900.ttf" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-solid-900.woff" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-solid-900.woff2" />
+    <Content Include="Content\wp-content\themes\destination\fonts\fa-solid-900d41d.eot" />
+    <Content Include="Content\wp-content\themes\destination\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\wp-content\themes\destination\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\wp-content\themes\destination\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\wp-content\themes\destination\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\wp-content\themes\destination\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Content\wp-json\oembed\1.0\embed0066" />
+    <Content Include="Content\wp-json\oembed\1.0\embed08b5.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embed10ac.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embed15e0" />
+    <Content Include="Content\wp-json\oembed\1.0\embed1961.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embed29c0.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embed303a" />
+    <Content Include="Content\wp-json\oembed\1.0\embed3225" />
+    <Content Include="Content\wp-json\oembed\1.0\embed3839.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embed39cc" />
+    <Content Include="Content\wp-json\oembed\1.0\embed3a9c" />
+    <Content Include="Content\wp-json\oembed\1.0\embed3af2" />
+    <Content Include="Content\wp-json\oembed\1.0\embed4253.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embed4877" />
+    <Content Include="Content\wp-json\oembed\1.0\embed494b" />
+    <Content Include="Content\wp-json\oembed\1.0\embed4c0c" />
+    <Content Include="Content\wp-json\oembed\1.0\embed5711.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embed62fb.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embed64b6" />
+    <Content Include="Content\wp-json\oembed\1.0\embed6577.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embed6a95" />
+    <Content Include="Content\wp-json\oembed\1.0\embed6d83.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embed85ee.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embed898f" />
+    <Content Include="Content\wp-json\oembed\1.0\embed95a3" />
+    <Content Include="Content\wp-json\oembed\1.0\embed9ec6.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embeda3e6.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embeda49e" />
+    <Content Include="Content\wp-json\oembed\1.0\embeda9e6" />
+    <Content Include="Content\wp-json\oembed\1.0\embedaaa5" />
+    <Content Include="Content\wp-json\oembed\1.0\embedb3b4" />
+    <Content Include="Content\wp-json\oembed\1.0\embedb3e0.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embedb701.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embedbaff" />
+    <Content Include="Content\wp-json\oembed\1.0\embedc147" />
+    <Content Include="Content\wp-json\oembed\1.0\embeddc7a.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embede6fc.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embedeb5c" />
+    <Content Include="Content\wp-json\oembed\1.0\embedf0fa.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embedf1d6.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embedf3ef.json" />
+    <Content Include="Content\wp-json\oembed\1.0\embedfea9.json" />
+    <Content Include="Content\wp-json\wp\v2\categories\10.json" />
+    <Content Include="Content\wp-json\wp\v2\categories\11.json" />
+    <Content Include="Content\wp-json\wp\v2\categories\3.json" />
+    <Content Include="Content\wp-json\wp\v2\categories\5.json" />
+    <Content Include="Content\wp-json\wp\v2\categories\7.json" />
+    <Content Include="Content\wp-json\wp\v2\categories\8.json" />
+    <Content Include="Content\wp-json\wp\v2\pages\14.json" />
+    <Content Include="Content\wp-json\wp\v2\pages\16.json" />
+    <Content Include="Content\wp-json\wp\v2\pages\18.json" />
+    <Content Include="Content\wp-json\wp\v2\pages\20.json" />
+    <Content Include="Content\wp-json\wp\v2\pages\62.json" />
+    <Content Include="Content\wp-json\wp\v2\pages\78.json" />
+    <Content Include="Content\wp-json\wp\v2\pages\8.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\100.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\135.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\160.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\164.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\168.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\187.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\22.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\26.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\4.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\48.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\52.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\55.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\58.json" />
+    <Content Include="Content\wp-json\wp\v2\posts\97.json" />
+    <Content Include="Content\wp-json\wp\v2\tags\12.json" />
+    <Content Include="Content\wp-json\wp\v2\tags\13.json" />
+    <Content Include="Content\wp-json\wp\v2\tags\14.json" />
+    <Content Include="Content\wp-json\wp\v2\tags\15.json" />
+    <Content Include="Content\wp-json\wp\v2\tags\17.json" />
+    <Content Include="Content\wp-json\wp\v2\tags\9.json" />
+    <Content Include="Content\wp-json\wp\v2\users\1.json" />
+    <None Include="packages.config" />
+    <Content Include="Views\Home\AboutMe.cshtml" />
+    <Content Include="Views\Blog\Detail.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\Add.cshtml" />
+    <Content Include="Views\Blog\Edit.cshtml" />
+    <Content Include="Views\Shared\About.cshtml">
+      <BrowseToURL>~/Shared/About</BrowseToURL>
+    </Content>
+    <Content Include="Views\Shared\_about.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202206010810241_nasa.resx">
+      <DependentUpon>202206010810241_nasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206010812466_nasa1.resx">
+      <DependentUpon>202206010812466_nasa1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206011351437_nasa3.resx">
+      <DependentUpon>202206011351437_nasa3.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49255</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44325/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

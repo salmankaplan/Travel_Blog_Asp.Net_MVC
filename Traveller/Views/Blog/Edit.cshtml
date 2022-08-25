@@ -1,0 +1,98 @@
+﻿@using Traveller.BlogModel;
+@model TravelModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<section class="page-wrap with-sidebar">
+    <div class="container">
+
+        <div class="page-header post-header normal">
+
+            <h1 class="entry-title">Edit Blog</h1>
+
+        </div>
+
+        <div class="col-md-12">
+            <div class="page-content">
+                <article id="page-78" class="post-78 page type-page status-publish hentry">
+
+                    <div class="entry-content">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form method="post" action="~/Blog/Edit" enctype="multipart/form-data">
+
+                                    <div class="mb-3">
+                                        <label for="Title" class="form-label">Title</label>
+                                        <input type="text" name="Title" value="@Model.OnePlace.Title" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Date" class="form-label">Date</label>
+                                        <input type="text" min="0" id="Date" name="Date" class="form-control" value="@Model.OnePlace.Date.ToString("dd/MM/yyyy")" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Description" class="form-label">Description</label>
+                                        <textarea id="Description" name="Description" class="form-control" required>@Model.OnePlace.Description</textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Image" class="form-label">Image</label>
+                                        <input type="file" id="Image" name="Image" class="form-control">
+                                        <br />
+                                        <img src="~/Content/images/@Model.OnePlace.Image" width="70%" alt="Alternate Text" />
+                                        <br />
+                                    </div>
+                                    <input type="hidden" value="true" id="State" name="State">
+                                    <input type="hidden" value="@Model.OnePlace.Id" name="Id" id="Id" />
+                                    <button class="btn btn-success" type="submit">Edit blog</button>
+                                </form>
+                                <p>
+
+
+                                </p>
+                                <div class="row">
+                                    @foreach (var image in Model.Image)
+                                    {
+                                        <div class="col-md-4 mb-3">
+                                            <div class="image-setting">
+
+                                                <a href="~/Blog/BlogImageDelete?id=@image.Id" class="btn btn-danger btn-sm p-1">
+                                                    <i class="fa fa-times"></i>
+                                                </a>
+                                            </div>
+                                            <img src="~/Content/images/@image.Title" width="100%" />
+
+                                        </div>
+                                    }
+                                </div>
+                                <p>
+                                    <form method="post" action="~/Blog/BlogImageAdd" enctype="multipart/form-data">
+                                        <div class="col-md-12">
+                                            <p>
+                                                <label for="Image" class="form-label">Image</label>
+                                                <input type="file" id="Title" name="Title" class="form-control">
+                                                <br />
+                                                <input type="hidden" value="@Model.OnePlace.Id" name="PlaceId" id="PlaceId" />
+                                                <input type="hidden" value="true" id="State" name="State">
+                                            </p>
+                                        </div>
+
+                                        <p>
+                                            <button class="btn btn-warning btn-lg col-md-3" type="submit"><i class="fa fa-images"></i> Add Image</button>
+
+                                        </p>
+
+
+                                    </form>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+        </div> <!-- end content -->
+
+
+    </div>
+</section>

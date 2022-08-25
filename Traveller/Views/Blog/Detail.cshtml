@@ -1,0 +1,195 @@
+﻿@using Traveller.BlogModel;
+@model TravelModel
+@{
+    ViewBag.Title = "Detail";
+
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="~/Content/star/jquery.rateyo.min.css" rel="stylesheet" />
+<script src="~/Content/star/jquery.min.js"></script>
+<script src="~/Content/star/jquery.rateyo.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<div class="single-page-content">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="single-main">
+                    <article id="post-100" class="mb-post-outer big-post post-100 post type-post status-publish format-standard has-post-thumbnail hentry category-destination tag-travel">
+                        <div class="mb-post">
+
+                            <div class="mb-post-container">
+                                <div class="mb-post-content">
+                                    <!-- Post excerpt -->
+
+                                    <div class="single-content">
+
+                                        <header class="entry-header title-center">
+                                            <div class="container">
+                                                <!-- Posts entry meta -->
+                                                <!-- End of posts entry meta -->
+
+                                                <h1 class="mb-post-title">@Model.OnePlace.Title</h1>
+                                                <div class="md-post-meta">
+                                                    <span class="time">@Model.OnePlace.Date.ToString("dd/MM/yyyy")</span>
+
+                                                    <span class="comment-count">@Model.comment.Count() comments</span>
+                                                </div>
+                                            </div>
+                                        </header>
+
+                                        <div class="featured-area media-small">
+                                            <figure class="mb-post-media">
+                                                <a href="#" class="post-thumbnail" title="The Ultimate Girls Packing List for Africa Jungle"><img width="1000" height="615" src="~/Content/images/@Model.OnePlace.Image" class="attachment-destination_post_thumb size-destination_post_thumb wp-post-image" alt="" loading="lazy" /></a>
+                                            </figure>
+                                        </div>
+                                    </div>
+
+                                    <div class="entry-content">
+                                        <br />
+                                        <p>@Model.OnePlace.Description</p>
+
+
+                                    </div><!-- .entry-content -->
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </article>
+                    <div class='row'>
+                        @foreach (var item in Model.Image)
+
+                        {
+                            <div class='col-md-4 related-post-style2'>
+                                <img width="400" height="250" src="~/Content/images/@item.Title" class="img_full_responsive margin-15 wp-post-image" alt="" loading="lazy" />
+                            </div>
+
+                        }
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+
+
+                    <div class="comment-single">
+
+                        <section class="box with-header comments-section" id="comment">
+                            <h3 class="title"><span><span class='comment-count'>comments</span></span></h3>
+                            <!-- Comments flow -->
+                            @foreach (var item in Model.comment)
+                            {
+                                <div class="comments">
+                                    <li id="comment-6" class="comment even thread-even depth-1 parent">
+                                        <article id="div-comment-6" class="comment-body">
+                                            <footer class="comment-meta">
+                                                <div class="comment-author vcard author-img">
+                                                    <h5 class="author">@item.NameSurname</h5>
+                                                </div><!-- .comment-author -->
+
+                                            </footer><!-- .comment-meta -->
+
+                                            <div class="comment-content">
+                                                <p>@item.TravelComment</p>
+                                            </div><!-- .comment-content -->
+                                            <p class='fancy_one_tw_sider'>
+                                                <span>
+                                                    @for (int i = 0; i < item.Rate; i++)
+                                                    {
+                                                        
+                                                        <i class="fa  fa-star text-danger"></i>
+                                                    }
+                                                    @for (int i = 0; i < 5 - Convert.ToInt32(item.Rate); i++)
+                                                    {
+                                                        <i class="fa fa-star text-light"></i>
+                                                    }
+
+
+
+                                                </span>
+                                            </p>
+
+
+                                        </article><!-- .comment-body -->
+                                    </li><!-- #comment-## -->
+                                </div>
+                            }
+
+
+                            <div>
+                                <h4 class="blog-page-title">Add Comment</h4>
+
+                                <!-- Form -->
+                                <form method="post" id="form" class="form">
+
+                                    <div class="row mb-20 mb-md-10">
+
+                                        <div class="col-md-12 mb-md-10">
+                                            <!-- Name -->
+                                            <input type="text" name="NameSurname" id="NameSurname" class="input-md form-control" placeholder="NameSurname" maxlength="100" required>
+                                            <input type="hidden" value="@Model.OnePlace.Id" name="PlaceId" id="PlaceId" />
+                                            <input type="hidden" value="True" name="State" id="State" />
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Comment -->
+                                    <div class="mb-30 mb-md-10">
+                                        <textarea name="TravelComment" id="TravelComment" class="input-md form-control" rows="6" placeholder="Travel Comment" maxlength="400"></textarea>
+                                    </div>
+                                    <div id="rateYo">
+                                    </div>
+                                    <input type="hidden" name="Rate" id="rating" />
+                                    <br />
+                                    
+                                    <!-- Send Button -->
+                                    <button type="submit" class="btn btn-mod btn-medium btn-round">
+                                        Send Comment
+                                    </button>
+
+                                </form>
+                                <!-- End Form -->
+
+                            </div>
+                            <br />
+                            <h2><i class="bi bi-gear"></i>Blog Setting</h2>
+                            <hr />
+
+                            <button style="background-color:#ffd800 "><i class="bi bi-pen"></i> <a href="~/Blog/Edit?id=@Model.OnePlace.Id">Edit</a></button>
+                            <button style="background-color:darkred"><i class="bi bi-trash"></i> <a href="~/Blog/Delete?id=@Model.OnePlace.Id">Delete</a></button>
+                            <br />
+
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+
+        $("#rateYo").rateYo({
+
+            rating: 0,
+            numStars: 5,
+            maxValue: 5,
+            fullStar: true,
+            // multiColor: {
+
+            //    "startColor": "#00FF00", //RED
+            //    "endColor": "#00FF00"  //GREEN
+            //},
+            onChange: function (rating) {
+                $('#rating').val(rating);
+            }
+        });
+
+    });
+</script>
+

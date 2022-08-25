@@ -1,0 +1,62 @@
+﻿@using Traveller.Models;
+@model Place
+@{
+    ViewBag.Title = "Add";
+}
+
+<section class="page-wrap with-sidebar">
+    <div class="container">
+
+        <div class="page-header post-header normal">
+
+            <h1 class="entry-title">Add Blog</h1>
+
+        </div>
+
+        <div class="right-sidebar col-md-8">
+            <div class="page-content">
+                <article id="page-78" class="post-78 page type-page status-publish hentry">
+
+                    <div class="entry-content">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form method="post" action="~/Blog/Add" enctype="multipart/form-data">
+
+                                    <div class="mb-3">
+                                        <label for="Title" class="form-label">Title</label>
+                                        <input type="text" name="Title" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Date" class="form-label">Date</label>
+                                        <input type="date" min="0" id="Date" name="Date" class="form-control" value="0" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Description" class="form-label">Description</label>
+                                        <textarea id="Description" name="Description" class="form-control" required></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Image" class="form-label">Image</label>
+                                        <input type="file" id="Image" name="Image" class="form-control">
+                                    </div>
+
+                                    <div class="form-check mb-2 form-check-success">
+                                        <input class="form-check-input" type="checkbox" value="true" id="State" name="State" checked="">
+                                        <label class="form-check-label" for="customckeck1">State</label>
+                                    </div>
+
+                                    <button class="btn btn-success" type="submit">Add New Blog</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+        </div> <!-- end content -->
+
+        @Html.Partial("~/Views/Shared/_about.cshtml")
+    </div>
+</section>
+
+
